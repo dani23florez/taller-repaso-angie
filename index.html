@@ -3,62 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio Profesional</title>
+    <title>Mi Portafolio - Desarrollador Web</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <a href="#" class="logo">MiPortafolio</a>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="inicio" class="hero">
+    <!-- Encabezado / Hero -->
+    <header class="hero">
         <div class="hero-content">
             <h1>Hola, soy Desarrollador Web</h1>
             <p>Construyo experiencias digitales e innovadoras a medida.</p>
             <a href="#proyectos" class="btn">Ver Trabajos</a>
         </div>
-    </section>
+    </header>
 
-    <section id="proyectos" class="proyectos-section">
+    <!-- Sección de Proyectos -->
+    <section id="proyectos" class="proyectos">
         <h2>Mis Proyectos</h2>
         <div class="proyectos-container">
             
-            <article class="card" onclick="openModal('Proyecto 1', 'Descripción detallada del Proyecto 1: Esta aplicación web fue desarrollada utilizando HTML5, CSS3 y JavaScript moderno para lograr una interfaz dinámica e interactiva.', 'proyecto1.jpg')">
-                <img src="proyecto1.jpg" alt="Proyecto 1">
-                <h3>Proyecto 1</h3>
-                <p>Descripción breve del proyecto realizado con HTML y CSS.</p>
+            <!-- Proyecto 1 -->
+            <article class="card">
+                <img src="img/proyecto1.jpg" alt="Vista previa del Proyecto 1" class="card-img">
+                <div class="card-content">
+                    <h3>Proyecto 1</h3>
+                    <p>Descripción breve del proyecto realizado con HTML y CSS.</p>
+                </div>
             </article>
 
-            <article class="card" onclick="openModal('Proyecto 2', 'Descripción detallada del Proyecto 2: Plataforma enfocada en la experiencia de usuario con diseño totalmente responsivo y optimización de carga.', 'proyecto2.jpg')">
-                <img src="proyecto2.jpg" alt="Proyecto 2">
-                <h3>Proyecto 2</h3>
-                <p>Aplicación web interactiva desarrollada para un cliente.</p>
+            <!-- Proyecto 2 -->
+            <article class="card">
+                <img src="img/proyecto2.jpg" alt="Vista previa del Proyecto 2" class="card-img">
+                <div class="card-content">
+                    <h3>Proyecto 2</h3>
+                    <p>Aplicación web interactiva desarrollada para un cliente.</p>
+                </div>
             </article>
 
-            <article class="card" onclick="openModal('Proyecto 3', 'Descripción detallada del Proyecto 3: Sistema web completo con integración de modales, efectos visuales y componentes reutilizables.', 'proyecto3.jpg')">
-                <img src="proyecto3.jpg" alt="Proyecto 3">
-                <h3>Proyecto 3</h3>
-                <p>Diseño de interfaz responsivo y moderno.</p>
+            <!-- Proyecto 3 -->
+            <article class="card">
+                <img src="img/proyecto3.jpg" alt="Vista previa del Proyecto 3" class="card-img">
+                <div class="card-content">
+                    <h3>Proyecto 3</h3>
+                    <p>Diseño de interfaz responsiva y moderna.</p>
+                </div>
             </article>
 
         </div>
     </section>
 
-    <!-- Modal para ver la información detallada del proyecto -->
-    <div id="projectModal" class="modal">
+    <!-- Modales para ver más detalles -->
+    <div id="modal1" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <img id="modalImage" src="" alt="Imagen del proyecto">
-            <h3 id="modalTitle">Título del Proyecto</h3>
-            <p id="modalDescription">Detalle completo del proyecto...</p>
+            <span class="close">&times;</span>
+            <h2>Título del Proyecto 1</h2>
+            <p>Detalle completo del proyecto 1...</p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Título del Proyecto 2</h2>
+            <p>Detalle completo del proyecto 2...</p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Título del Proyecto 3</h2>
+            <p>Detalle completo del proyecto 3...</p>
         </div>
     </div>
 
