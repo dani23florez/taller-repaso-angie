@@ -1,159 +1,102 @@
-/* 1. Variables globales (:root) */
-:root {
-    --color-principal: #1f2937;
-    --color-secundario: #3b82f6;
-    --color-fondo: #f3f4f6;
-    --color-texto: #ffffff;
-}
-
+/* Estilos generales (Modo Claro por defecto) */
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: var(--color-fondo);
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
     color: #333;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* 2. Flexbox en Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: var(--color-principal);
-    color: var(--color-texto);
+/* Botón flotante de tema */
+.theme-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background: #333;
+    color: #fff;
+    font-size: 16px;
+    transition: background 0.3s, color 0.3s;
 }
 
-header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-nav a {
-    color: var(--color-texto);
-    text-decoration: none;
-    margin-left: 1.5rem;
-}
-
-/* 3. Hero Image con Flexbox */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/hero.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 80px 20px;
     text-align: center;
-    color: var(--color-texto);
-    padding: 0 1rem;
+    background-color: #e2e8f0;
+    transition: background-color 0.3s;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+.hero-content h1 {
+    margin-bottom: 10px;
 }
 
-.hero .btn {
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    background-color: var(--color-secundario);
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #2563eb;
     color: white;
     text-decoration: none;
     border-radius: 5px;
 }
 
-/* 4. Grid Responsivo para las tarjetas */
-.proyectos-container {
-    padding: 3rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.proyectos-container h2 {
+.proyectos {
+    padding: 40px 20px;
     text-align: center;
-    margin-bottom: 2rem;
 }
 
-.grid-proyectos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+.proyectos-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .card {
-    background: white;
+    background: #fff;
     border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 300px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
-.card img {
+.card-img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
 }
 
-.card h3, .card p {
-    padding: 0 1rem;
+.card-content {
+    padding: 15px;
 }
 
-.card p {
-    color: #666;
-    padding-bottom: 1rem;
-}
-/* Estilos para el Modal (ventana emergente) */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
+/* ---------------------------------- */
+/* MODO OSCURO                         */
+/* ---------------------------------- */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f1f1f1;
 }
 
-.modal-content {
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 12px;
-    max-width: 500px;
-    width: 90%;
-    position: relative;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+body.dark-mode .hero {
+    background-color: #2d2d2d;
 }
 
-.modal-content img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
+body.dark-mode .card {
+    background: #2a2a2a;
+    color: #f1f1f1;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
 }
 
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+body.dark-mode .theme-btn {
+    background: #f1f1f1;
     color: #333;
-}
-
-.close-btn:hover {
-    color: #ff0000;
-}
-
-.card {
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
