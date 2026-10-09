@@ -1,20 +1,19 @@
-// Función para abrir la ventana modal con la información del proyecto seleccionado
-function openModal(title, description, imageSrc) {
-    document.getElementById('modalTitle').innerText = title;
-    document.getElementById('modalDescription').innerText = description;
-    document.getElementById('modalImage').src = imageSrc;
-    document.getElementById('projectModal').style.display = 'flex';
-}
+const themeToggleBtn = document.getElementById('theme-toggle');
 
-// Función para cerrar la ventana modal
-function closeModal() {
-    document.getElementById('projectModal').style.display = 'none';
-}
-
-// Cerrar el modal al hacer clic fuera del contenido principal
-window.onclick = function(event) {
-    const modal = document.getElementById('projectModal');
-    if (event.target === modal) {
-        closeModal();
+themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    
+    // Guardar la preferencia en el navegador
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
     }
-};
+});
+
+// Cargar la preferencia guardada al abrir la página
+window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+});
